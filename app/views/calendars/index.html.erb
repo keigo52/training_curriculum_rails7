@@ -9,18 +9,20 @@
   <% end %>
 
   <div class='calendar'>
-  <% @week_days.each do |day| %>
-    <div class='item'>
-      <div class='date'>
-        
-      </div>
-      <ul class='content'>
-      <% if day[:plans].length != 0 %>
-        <% day[:plans].each do |plan| %>
-          <li class='plan-list'>・<%= plan %></li>
-        <% end %>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
 
+    <% @week_days.each do |day| %>
+      <div class='item'>
+        <div class='date'>
+          <span class='date-text'><%= "#{day[:month]}/#{day[:date]}#{day[:day_of_week]}" %></span>
+        </div>
+        <ul class='content'>
+          <% if day[:plans].length != 0 %>
+            <% day[:plans].each do |plan| %>
+              <li class='plan-list'>・<%= plan %></li>
+            <% end %>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+  </div>
+</div>
